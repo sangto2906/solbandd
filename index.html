@@ -4,23 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOL BAND - Đối Tác Âm Nhạc Tin Cậy</title>
+    <meta name="description" content="Sol Band — ban nhạc biểu diễn chuyên nghiệp tại Hà Nội và các tỉnh phía Bắc.">
     <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Literata:opsz,wght@7..72,500;7..72,600;7..72,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
-        <div class="logo">
-            <img src="assets/logo.jpg" alt="Sol Band Logo" class="logo-img" loading="lazy">
-            <a href="#home" class="logo-text-link">
-                <img src="assets/text.png" alt="Sol Band Text" class="logo-text-img" loading="lazy">
-            </a>
-        </div>
+        <a href="#home" class="logo" aria-label="Sol Band — về đầu trang">
+            <img src="assets/logo.jpg" alt="" class="logo-img" width="48" height="48" decoding="async">
+            <span class="logo-wordmark">SOL BAND</span>
+        </a>
         <nav class="nav-menu" aria-label="Main Navigation">
-            <ul class="nav-list">
+            <ul class="nav-list" id="primary-navigation">
                 <li class="nav-item">
                     <a href="#home" class="nav-link">Trang chủ</a>
                 </li>
@@ -32,15 +30,17 @@
                     <a href="#gallery" class="nav-link">Hình ảnh & Video</a>
                 </li>
             </ul>
-            <div class="nav-toggle" tabindex="0" aria-label="Toggle navigation menu">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="nav-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="primary-navigation">
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+            </button>
         </nav>
     </header>
 
     <main class="main-content">
         <section class="band-intro-card" id="home">
-            <h1>Sol Band – Âm nhạc gắn kết cảm xúc</h1>
+            <p class="intro-location">Hà Nội · Biểu diễn trực tiếp</p>
+            <h1>Âm nhạc cho những khoảnh khắc ở lại.</h1>
+            <p class="intro-lead">Sol Band đồng hành cùng sự kiện bằng những bản phối được chuẩn bị riêng, từ không gian thân mật đến sân khấu lớn.</p>
             <div class="band-intro-section">
                 Sol Band là một nhóm nhạc trẻ, chuyên nghiệp và đầy nhiệt huyết đang hoạt động tại Hà Nội và các tỉnh phía Bắc. Chúng tôi mang đến những màu sắc âm nhạc mộc mạc nhưng tinh tế, phù hợp với mọi không gian – từ các sự kiện lớn cho đến những buổi tiệc thân mật, gần gũi.
             </div>
@@ -48,30 +48,30 @@
                 Với đội hình linh hoạt và dày dặn kinh nghiệm biểu diễn thực tế, Sol Band không chỉ là người chơi nhạc – mà là người đồng hành cùng cảm xúc của bạn và khách mời trong từng khoảnh khắc.
             </div>
             <div class="band-intro-section">
-                <span class="band-intro-label">🔥 Dịch vụ Sol Band cung cấp:</span>
+                <span class="band-intro-label">Dịch vụ Sol Band cung cấp</span>
                 <ul>
                     <li>Ban nhạc biểu diễn chuyên nghiệp theo yêu cầu</li>
                     <li>Ca sĩ, nhạc công giàu kinh nghiệm – có thể chơi từ set nhẹ nhàng đến sôi động</li>
                 </ul>
-                <span class="band-intro-label" style="margin-top:8px;display:block;">Biểu diễn tại:</span>
+                <span class="band-intro-label band-intro-label-spaced">Biểu diễn tại</span>
                 <ul>
                     <li>Sự kiện công ty, tiệc cưới, khai trương, hội nghị, gala dinner, year-end party (YEP)</li>
                     <li>Quán cafe, nhà hàng, lounge, pub, sân khấu ngoài trời</li>
                     <li>Tour du lịch nghỉ dưỡng, tiệc riêng tư, sự kiện quy mô nhỏ</li>
                 </ul>
-                <span class="band-intro-label" style="margin-top:8px;display:block;">Ngoài âm nhạc:</span>
+                <span class="band-intro-label band-intro-label-spaced">Ngoài âm nhạc</span>
                 <span>Nhận cung cấp DJ, MC, Dancer, PG, hệ thống âm thanh ánh sáng chuyên nghiệp</span>
             </div>
             <div class="band-intro-section">
-                <span class="band-intro-label">🎵 Phong cách biểu diễn</span>
+                <span class="band-intro-label">Phong cách biểu diễn</span>
                 <span>Từ Acoustic chill, Ballad sâu lắng, đến Pop – R&B hiện đại hay những bản phối House – Remix sôi động, Sol Band có thể linh hoạt theo từng không gian và chủ đề chương trình. Mỗi set diễn được chuẩn bị kỹ lưỡng, phối hợp ăn ý giữa các thành viên để đảm bảo mang đến trải nghiệm trọn vẹn nhất.</span>
             </div>
             <div class="band-intro-section">
-                <span class="band-intro-label">🎸 Dàn nhạc cụ – Đội hình biểu diễn</span>
+                <span class="band-intro-label">Dàn nhạc cụ – Đội hình biểu diễn</span>
                 <span>Chúng tôi sở hữu đội hình biểu diễn đa dạng và đầy đủ:<br>Guitar | Keyboard | Trống | Djembe | Bass | Saxophone | Violin, cùng với các ca sĩ được đào tạo bài bản, giàu cảm xúc.</span>
             </div>
             <div class="band-intro-section">
-                <span class="band-intro-label">💬 Vì sao chọn Sol Band?</span>
+                <span class="band-intro-label">Vì sao chọn Sol Band?</span>
                 <ul>
                     <li>Làm việc trực tiếp, không qua trung gian</li>
                     <li>Linh hoạt theo yêu cầu: thời gian, thể loại, quy mô</li>
@@ -86,7 +86,7 @@
 
 
         <section id="members">
-        <h2 class="section-title">🎤 THÀNH VIÊN BAND</h2>
+        <h2 class="section-title">Những người làm nên âm thanh</h2>
             
             <div class="member-cards-overview">
                 <div class="member-card" data-member="1">
@@ -118,7 +118,7 @@
                 </div>
                 <div class="member-card" data-member="3">
                     <div class="member-card-header">
-                        <img src="assets/member3.jpg" alt="Guitarist" class="member-card-img" loading="lazy">
+                        <img src="assets/member3.JPG" alt="Guitarist" class="member-card-img" loading="lazy">
                         <div class="member-card-info">
                             <h3 class="member-card-name">Tạ Đức Trung</h3>
                             <p class="member-card-role">Guitarist</p>
@@ -128,23 +128,17 @@
             </div>
 
             <div class="member-details-container">
-                <div class="member-detail" id="member-detail-1" style="display: none;">
+                <div class="member-detail" id="member-detail-1" hidden>
                     <div class="member-layout">
                         <div class="member-info-left">
                             <img src="assets/member1.jpg" alt="Keyboardist" class="member-img" loading="lazy">
                             <h3 class="member-name">Phạm Duy Việt</h3>
                             <p class="member-role">Keyboardist</p>
                             <div class="member-description">
-                                <b>Giới thiệu qua về bản thân</b><br>
-                                Là một trong những thành viên đầu tiên của Sol Band, Duy Việt mang đến nguồn năng lượng trẻ trung nhưng cũng đầy sâu lắng qua từng tiếng đàn. Đảm nhận vị trí keyboard, Việt không chỉ là người tạo nền cho giai điệu mà còn góp phần định hình chất âm riêng cho từng bài hát của nhóm.<br><br>
-                                Tiếp xúc với âm nhạc từ sớm, bắt đầu bằng niềm yêu thích nghe nhạc và ca hát, Việt đã tự học chơi đàn piano từ những năm cấp 3 – khoảng thời gian thanh xuân đẹp nhất và cũng là lúc cậu bắt đầu hình thành đam mê âm nhạc một cách nghiêm túc. Từ niềm yêu thích ban đầu, Việt dần tự mày mò thêm về hòa âm, phối khí và kỹ thuật biểu diễn, dần hoàn thiện phong cách chơi đàn mang bản sắc cá nhân.<br><br>
-                                <b>Kỹ năng chuyên môn</b><br>
-                                Trong ban nhạc, keyboard là nhạc cụ có khả năng "dẫn lối cảm xúc", và Duy Việt làm điều đó một cách tự nhiên, tinh tế. Cậu luôn biết tiết chế, đặt cảm xúc của bài hát lên trên phần thể hiện cá nhân. Dù là đoạn intro đơn giản hay những lớp pad nền sâu lắng, tiếng đàn của Việt luôn mang lại cảm giác ấm áp, gắn kết và hỗ trợ tốt cho giọng hát chính.<br><br>
-                                Bên cạnh khả năng biểu diễn, Việt còn đóng vai trò quan trọng trong việc chọn tiếng, setup hiệu ứng, hỗ trợ phối khí và xây dựng ý tưởng hoà âm cùng các thành viên khác. Cậu có tư duy âm thanh hiện đại, phù hợp với phong cách pop, R&B, acoustic và ballad mà Sol Band theo đuổi. Ngoài ra, Việt thường tìm cảm hứng từ các thể loại như lo-fi, nhạc phim, soul – những dòng nhạc ảnh hưởng rõ nét đến cách cậu xử lý phần hòa âm của mình.<br><br>
-                                <b>Kinh nghiệm biểu diễn</b><br>
-                                Mặc dù còn khá trẻ, Duy Việt đã có nhiều năm biểu diễn sân khấu cùng Sol Band. Cậu không chỉ quen thuộc với việc chơi các bản phối đã tập sẵn mà còn có khả năng ứng biến linh hoạt với các ca khúc chưa từng nghe qua – điều thường thấy trong các buổi diễn có yêu cầu ngẫu hứng từ khán giả. Trong những tình huống đó, Việt luôn tìm được lối hòa âm phù hợp để hỗ trợ ca sĩ thể hiện bài hát một cách trọn vẹn.<br><br>
-                                Ngoài ra Việt từng đứng trên nhiều sân khấu lớn nhỏ, từng chơi nhạc cho Hoàng Dũng, Grey D trong một vài sự kiện,...<br><br>
-                                Đối với Việt, mỗi buổi tập hay buổi diễn đều cần được chuẩn bị kỹ càng – không chỉ là mặt kỹ thuật, mà cả tinh thần. Cậu luôn giữ thái độ cầu thị, sẵn sàng lắng nghe và học hỏi từ mọi trải nghiệm biểu diễn, góp phần tạo nên một hình ảnh keyboardist vừa vững chuyên môn, vừa giàu cảm xúc trong mắt khán giả.
+                                <b>Keyboardist giàu cảm xúc</b><br>
+                                Là một trong những thành viên đầu tiên của Sol Band, Duy Việt góp phần định hình chất âm bằng lối chơi tinh tế, tiết chế và hỗ trợ tốt cho giọng hát.<br><br>
+                                <b>Nổi bật</b><br>
+                                Có thế mạnh về hòa âm, phối khí, chọn tiếng và setup hiệu ứng; linh hoạt với Pop, R&amp;B, Acoustic và Ballad. Việt có khả năng ứng biến tốt trên sân khấu và từng chơi nhạc cho Hoàng Dũng, Grey D tại một số sự kiện.
                             </div>
                         </div>
                         <div class="member-gallery-instagram">
@@ -157,61 +151,42 @@
                         </div>
                     </div>
                 </div>
-                <div class="member-detail" id="member-detail-4" style="display: none;">
+                <div class="member-detail" id="member-detail-4" hidden>
                     <div class="member-layout">
                         <div class="member-info-left">
                             <img src="assets/member4.jpg" alt="Drummer" class="member-img" loading="lazy">
                             <h3 class="member-name">Ngô Ngọc Duy</h3>
                             <p class="member-role">Drummer</p>
                             <div class="member-description">
-                                <b>Giới thiệu qua về bản thân</b><br>
-                                Nếu Sol Band là một cơ thể sống, thì Ngọc Duy chắc chắn là "trái tim" của nhóm – người giữ nhịp, giữ vững tinh thần và kết nối mọi thứ lại với nhau bằng… tiếng trống. Là thành viên chơi drum của band, Duy không quá nhiều lời, cũng chẳng hay đứng ở vị trí trung tâm, nhưng cứ mỗi lần lên sân khấu, cậu luôn khiến cả nhóm cảm thấy yên tâm vì nhịp của mình đang nằm trong những cú đánh chắc chắn.<br><br>
-                                Duy đến với trống từ khá sớm – một phần vì tò mò, một phần vì cảm thấy "được là chính mình" khi ngồi sau bộ drum. Ban đầu chỉ là những tiếng gõ vui tay trong phòng học, sau đó là những ngày tự mày mò học từ video trên mạng, và rồi dần dần, trống trở thành một phần quen thuộc trong cuộc sống. Gia nhập Sol Band từ những ngày đầu, Duy không nói nhiều, nhưng luôn có mặt đúng lúc – cả trong âm nhạc lẫn trong những lần dọn đồ sau diễn.<br><br>
-                                <b>Kỹ năng chuyên môn</b><br>
-                                Trống của Duy không ồn ào – mà "vừa đủ". Không đánh quá tay để gây chú ý, cũng chẳng phô trương kỹ thuật, Duy chọn cách đánh gọn gàng, rõ ràng, tập trung vào nhịp và cảm xúc. Những cú kick trầm chắc, tiếng snare rõ ràng, những đoạn fill vừa đủ khiến bài nhạc được đẩy lên mà vẫn giữ được sự nhẹ nhàng đặc trưng của Sol Band.<br><br>
-                                Cậu cũng khá nghiêm túc trong việc học hỏi và nâng cấp kỹ năng – từ cách giữ tempo ổn định, cách lắng nghe từng phần nhạc cụ khác, đến việc thử nghiệm trống điện tử, sample pad… để phù hợp với những bài có hơi hướng hiện đại. Duy thường là người đầu tiên đến buổi tập để chỉnh lại set drum, thử tiếng, và cũng là người cuối cùng dọn đồ sau mỗi buổi diễn.<br><br>
-                                <b>Kinh nghiệm biểu diễn</b><br>
-                                Dù còn khá trẻ, Ngọc Duy đã có kha khá kinh nghiệm biểu diễn – từ những buổi minishow nhỏ, các sự kiện sinh viên đến sân khấu lớn hơn. Cậu là kiểu người không cần nói nhiều trước giờ diễn, nhưng khi mọi người bước lên sân khấu, ai cũng biết: chỉ cần Duy gõ nhịp là cả band sẽ ổn.<br><br>
-                                Có nhiều lần band phải chơi bài mới theo yêu cầu của khán giả, chưa ai kịp bàn với ai thì Duy đã đếm nhịp và bắt đầu. Không phải lúc nào cũng hoàn hảo, nhưng nhờ sự bình tĩnh và nhạy cảm với tiết tấu, cậu luôn giúp cả nhóm tìm được "điểm tựa" để thể hiện hết mình.<br><br>
-                                Ngọc Duy không phải kiểu người thích spotlight, nhưng lại là người không thể thiếu để mọi thứ được vận hành trơn tru. Và với Sol Band, cậu ấy là người "gõ nhịp" không chỉ cho âm nhạc, mà còn cho cả tinh thần của nhóm.
+                                <b>Người giữ nhịp của Sol Band</b><br>
+                                Ngọc Duy sở hữu lối đánh chắc, gọn và vừa đủ, giữ cho tổng thể ổn định mà vẫn duy trì sự nhẹ nhàng đặc trưng của ban nhạc.<br><br>
+                                <b>Nổi bật</b><br>
+                                Giữ tempo tốt, nhạy bén khi ứng biến và luôn lắng nghe các nhạc cụ khác. Duy có kinh nghiệm từ minishow, sự kiện sinh viên đến sân khấu lớn, đồng thời sử dụng trống điện tử và sample pad cho các bản phối hiện đại.
                             </div>
                         </div>
                         <div class="member-gallery-instagram">
                             <img src="assets/member4-1.jpg" class="member-gallery-img" alt="Drummer 1" loading="lazy">
                             <img src="assets/member4-2.jpg" class="member-gallery-img" alt="Drummer 2" loading="lazy">
                             <img src="assets/member4-3.jpg" class="member-gallery-img" alt="Drummer 3" loading="lazy">
-                            <img src="assets/member4-4.jpg" class="member-gallery-img" alt="Drummer 4" loading="lazy">
-                            <img src="assets/member4-5.jpg" class="member-gallery-img" alt="Drummer 5" loading="lazy">
-                            <img src="assets/member4-6.jpg" class="member-gallery-img" alt="Drummer 6" loading="lazy">
                         </div>
                     </div>
             </div>
-                <div class="member-detail" id="member-detail-2" style="display: none;">
+                <div class="member-detail" id="member-detail-2" hidden>
                     <div class="member-layout">
                         <div class="member-info-left">
                             <img src="assets/member2.jpg" alt="Vocalist" class="member-img" loading="lazy">
                             <h3 class="member-name">Đỗ Xuân Hải (Hải Andy)</h3>
                             <p class="member-role">Vocalist</p>
-                                                         <div class="member-description">
-                                 <b>Giới thiệu qua về bản thân</b><br>
-                                 Hải Andy là một vocal có niềm đam mê âm nhạc từ năm 11 tuổi. Sở hữu phong thái tự tin cùng phong cách âm nhạc đa dạng và giàu màu sắc, Hải luôn biết cách đưa người nghe trải qua trọn vẹn cung bậc cảm xúc của mỗi bài hát.<br><br>
-                                 Điểm đặc biệt ở Hải Andy là sự kết hợp hài hòa giữa vẻ ngoài giản dị, phong cách lịch sự và một chút tinh nghịch, đáng yêu – điều khiến khán giả không chỉ nghe nhạc mà còn cảm thấy gần gũi, thoải mái khi theo dõi phần trình diễn. Với hơn 6 năm kinh nghiệm biểu diễn, Hải luôn tìm cách đổi mới bản thân qua từng sân khấu, mang đến những phần trình diễn sống động, chân thật và đầy cảm xúc.<br><br>
-                                 <b>Kỹ năng chuyên môn</b><br>
-                                 Hải sở hữu khả năng thể hiện đa dạng thể loại âm nhạc, từ Ballad, Pop, Rock, R&B, Rap, cho tới nhạc dân gian, dân ca quan họ, thính phòng – cho thấy khả năng cảm nhạc phong phú và linh hoạt của mình.<br><br>
-                                 Ngoài giọng hát nội lực và biểu cảm sân khấu tốt, Hải còn có khả năng sáng tác, làm MC sân khấu và dẫn dắt khán giả. Những phần trình diễn của Hải luôn có sự kết nối mạnh mẽ với người nghe – không chỉ đơn thuần là ca hát mà còn là "giao tiếp bằng cảm xúc" qua ánh mắt, cử chỉ và năng lượng tích cực.<br><br>
-                                 <b>Kinh nghiệm biểu diễn / Dự án</b><br>
-                                 Hải Andy đã có nhiều năm hoạt động âm nhạc và biểu diễn tại đa dạng không gian – từ sân khấu lớn đến các chương trình gần gũi, thân mật. Một số hoạt động nổi bật có thể kể đến:<br><br>
-                                 - 2 năm biểu diễn dân ca quan họ Bắc Ninh<br>
-                                 - Chung kết cuộc thi Giọng hát hay mở rộng Đông Anh<br>
-                                 - Sơ khảo cuộc thi Tiếng hát hay Đông Anh<br>
-                                 - Sự kiện đại tiệc SURYA GROUP<br>
-                                 - Biểu diễn tại các phòng trà, quán cafe, trung tâm thương mại, tiệc cưới và các chương trình sự kiện – event lớn nhỏ khác<br><br>
-                                 Dù đứng ở đâu, Hải luôn thể hiện rõ sự chuyên nghiệp, cuốn hút và linh hoạt của một người biểu diễn có kinh nghiệm – không chỉ là người hát, mà còn là người kể chuyện bằng âm nhạc.
+                             <div class="member-description">
+                                 <b>Vocalist đa năng</b><br>
+                                 Hải Andy có hơn 6 năm kinh nghiệm biểu diễn, sở hữu phong thái tự tin, khả năng kết nối khán giả và màu sắc âm nhạc linh hoạt.<br><br>
+                                 <b>Nổi bật</b><br>
+                                 Thể hiện tốt Ballad, Pop, Rock, R&amp;B, Rap, dân ca quan họ và thính phòng; đồng thời có khả năng sáng tác, làm MC và dẫn dắt sân khấu. Hải từng có 2 năm biểu diễn quan họ Bắc Ninh, vào chung kết Giọng hát hay mở rộng Đông Anh và biểu diễn tại nhiều sự kiện, phòng trà, tiệc cưới.
                              </div>
                         </div>
                         <div class="member-gallery-instagram">
-                <img src="assets/member2-1.jpg" class="member-gallery-img" alt="Vocalist 1" loading="lazy">
-                <img src="assets/member2-2.jpg" class="member-gallery-img" alt="Vocalist 2" loading="lazy">
+                <img src="assets/member2-1.JPG" class="member-gallery-img" alt="Vocalist 1" loading="lazy">
+                <img src="assets/member2-2.JPG" class="member-gallery-img" alt="Vocalist 2" loading="lazy">
                 <img src="assets/member2-3.jpg" class="member-gallery-img" alt="Vocalist 3" loading="lazy">
                 <img src="assets/member2-4.jpg" class="member-gallery-img" alt="Vocalist 4" loading="lazy">
                 <img src="assets/member2-5.jpg" class="member-gallery-img" alt="Vocalist 5" loading="lazy">
@@ -219,25 +194,17 @@
                         </div>
                     </div>
             </div>
-                <div class="member-detail" id="member-detail-3" style="display: none;">
+                <div class="member-detail" id="member-detail-3" hidden>
                     <div class="member-layout">
                         <div class="member-info-left">
-                            <img src="assets/member3.jpg" alt="Guitarist" class="member-img" loading="lazy">
+                            <img src="assets/member3.JPG" alt="Guitarist" class="member-img" loading="lazy">
                             <h3 class="member-name">Tạ Đức Trung</h3>
                             <p class="member-role">Guitarist</p>
-                                                         <div class="member-description">
-                                 <b>Giới thiệu qua về bản thân</b><br>
-                                 Đức Trung bắt đầu chơi guitar từ năm 16 tuổi, và niềm đam mê với âm nhạc đã gắn bó với cậu kể từ đó. Với phong cách kết hợp giữa cảm xúc mộc mạc của acoustic và sự bùng nổ, mạnh mẽ của rock hiện đại, Trung luôn tìm kiếm cách để "kể chuyện" bằng giai điệu và nhịp điệu, thay vì chỉ đơn thuần là chơi những nốt nhạc.<br><br>
-                                 Hơn 5 năm tìm hiểu, luyện tập và 4 năm biểu diễn thực tế đã giúp Trung hình thành một lối chơi riêng, cảm xúc nhưng không thiếu kỹ thuật, mộc mạc nhưng vẫn đầy năng lượng khi cần thiết.<br><br>
-                                 <b>Kỹ năng chuyên môn</b><br>
-                                 Đức Trung có khả năng linh hoạt trong nhiều thể loại: Rock, Ballad, Acoustic, Pop, với điểm mạnh nằm ở việc kết hợp lead và rhythm một cách mượt mà. Cậu có thể freestyle riff và giai điệu trong lúc jam hoặc biểu diễn, đồng thời cũng thành thạo trong việc hòa âm, thu âm tại nhà, phục vụ cho các dự án cá nhân hoặc hoạt động cùng band.<br><br>
-                                 Trung còn có khả năng chuyển soạn fingerstyle và tự viết tab cho những ca khúc nhạc thị trường – một kỹ năng giúp cậu luôn chủ động và sáng tạo hơn trong quá trình luyện tập cũng như biểu diễn.<br><br>
-                                 <b>Kinh nghiệm biểu diễn / Dự án</b><br>
-                                 Hiện tại, Đức Trung giữ vai trò lead guitarist của Sol Band, nơi cậu không chỉ thể hiện kỹ thuật mà còn góp phần định hình "chất" riêng trong từng ca khúc. Trung từng tham gia biểu diễn tại nhiều sự kiện lớn như:<br><br>
-                                 - Chung kết Toán TOFAS Toàn Cầu 2024<br>
-                                 - Các chương trình nghệ thuật của CLB Nghệ Thuật Thanh Huyền (Đông Anh)<br>
-                                 - Nhiều sự kiện sinh viên tại các trường đại học như Học viện Ngân Hàng, Học viện Bưu chính Viễn thông (PTIT)…<br><br>
-                                 Trên sân khấu, Trung luôn là người mang lại năng lượng tích cực, dù là với tiếng đàn nhẹ nhàng sâu lắng hay những đoạn solo bùng nổ. Cậu không ngừng trau dồi bản thân và luôn tìm kiếm cơ hội để đưa âm nhạc của mình đến gần hơn với khán giả.
+                             <div class="member-description">
+                                 <b>Lead guitarist giàu năng lượng</b><br>
+                                 Đức Trung có hơn 5 năm luyện tập và 4 năm biểu diễn, kết hợp chất mộc của Acoustic với năng lượng của Rock hiện đại.<br><br>
+                                 <b>Nổi bật</b><br>
+                                 Linh hoạt giữa lead và rhythm, có khả năng freestyle riff, hòa âm, thu âm, chuyển soạn fingerstyle và viết tab. Trung từng biểu diễn tại Chung kết Toán TOFAS Toàn Cầu 2024 cùng nhiều chương trình nghệ thuật và sự kiện sinh viên.
                              </div>
                         </div>
                         <div class="member-gallery-instagram">
@@ -254,11 +221,11 @@
         </section>
 
         <section id="gallery" class="gallery-section">
-            <h2 class="section-title">📸 HÌNH ẢNH & VIDEO</h2>
+            <h2 class="section-title">Một vài khoảnh khắc trên sân khấu</h2>
             <div class="gallery-link-container">
-                <a href="https://drive.google.com/drive/folders/1C4St8rZJL_S58zkWjR1NuCe17G9nTLcC" target="_blank" class="gallery-link">
-                    <i class="fas fa-external-link-alt"></i>
-                    <span>Xem tại đây</span>
+                <a href="https://drive.google.com/drive/folders/1C4St8rZJL_S58zkWjR1NuCe17G9nTLcC" target="_blank" rel="noopener noreferrer" class="gallery-link">
+                    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                    <span>Mở thư viện ảnh và video</span>
                 </a>
             </div>
         </section>
@@ -269,23 +236,28 @@
 
             <div class="footer-text">
                 <span class="brand-name">SOL BAND</span>
-                <span class="website">www.band.com</span>
+                <span class="website">Âm nhạc được chuẩn bị bằng sự tận tâm.</span>
             </div>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <script src="js/script.js" defer></script>
-    <div id="image-modal" class="image-modal" style="display:none;">
-        <img class="image-modal-content" id="image-modal-img" alt="Zoomed member image">
-        <div class="image-modal-controls">
-            <button class="image-modal-arrow image-modal-arrow-left" aria-label="Previous image">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            </button>
-            <button class="image-modal-arrow image-modal-arrow-right" aria-label="Next image">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"></polyline></svg>
-            </button>
-        </div>
+    <div id="image-modal" class="image-modal" role="dialog" aria-modal="true" aria-labelledby="image-modal-caption" hidden>
+        <button class="image-modal-close" type="button" aria-label="Đóng trình xem ảnh">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+        <figure class="image-modal-stage">
+            <img class="image-modal-content" id="image-modal-img" alt="">
+            <figcaption class="image-modal-meta">
+                <span id="image-modal-caption"></span>
+                <span class="image-modal-count" aria-live="polite"></span>
+            </figcaption>
+        </figure>
+        <button class="image-modal-arrow image-modal-arrow-left" type="button" aria-label="Ảnh trước">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+        <button class="image-modal-arrow image-modal-arrow-right" type="button" aria-label="Ảnh tiếp theo">
+            <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
     </div>
 </body>
-</html> 
+</html>
