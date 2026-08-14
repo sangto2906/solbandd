@@ -17,6 +17,156 @@ class BandWebsite {
     this.setupNavigation();
     this.setupMemberProfiles();
     this.setupGallery();
+    this.setupAudioPlayer();
+    this.setupServiceCards();
+    this.setupEnhancedMotion();
+  }
+
+  setupServiceCards() {
+    const cards = [...document.querySelectorAll('.band-intro-modern-grid article')];
+    if (!cards.length || !window.gsap) return;
+
+    cards.forEach((card) => {
+      card.addEventListener('mouseenter', () => {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        gsap.to(card, { y: -6, duration: .28, ease: 'power2.out', overwrite: 'auto' });
+      });
+      card.addEventListener('mouseleave', () => {
+        gsap.to(card, { y: 0, duration: .36, ease: 'power3.out', overwrite: 'auto' });
+      });
+      card.addEventListener('focusin', () => {
+        gsap.to(card, { y: -4, duration: .24, ease: 'power2.out', overwrite: 'auto' });
+      });
+      card.addEventListener('focusout', () => {
+        gsap.to(card, { y: 0, duration: .3, ease: 'power3.out', overwrite: 'auto' });
+      });
+    });
+  }
+
+  setupAudioPlayer() {
+    const player = document.querySelector('[data-audio-player]');
+    const audio = document.getElementById('band-audio');
+    const toggle = player?.querySelector('[data-audio-toggle]');
+    const volume = player?.querySelector('[data-audio-volume]');
+    const status = player?.querySelector('[data-audio-status]');
+    if (!player || !audio || !toggle || !volume || !status) return;
+
+    if (!audio.getAttribute('src')) {
+      player.hidden = true;
+      return;
+    }
+
+    audio.volume = Number(volume.value);
+    audio.addEventListener('canplay', () => { player.hidden = false; });
+    const setPlaying = (isPlaying) => {
+      player.classList.toggle('is-playing', isPlaying);
+      toggle.setAttribute('aria-label', isPlaying ? 'Tạm dừng nhạc' : 'Phát nhạc');
+    };
+
+    toggle.addEventListener('click', async () => {
+      if (audio.paused) {
+        try {
+          await audio.play();
+          status.textContent = 'Đang phát';
+        } catch {
+          player.classList.add('is-unavailable');
+          status.textContent = 'Thêm file demo audio';
+        }
+      } else {
+        audio.pause();
+      }
+    });
+    volume.addEventListener('input', () => { audio.volume = Number(volume.value); });
+    audio.addEventListener('play', () => setPlaying(true));
+    audio.addEventListener('pause', () => { setPlaying(false); status.textContent = 'Demo audio'; });
+    audio.addEventListener('ended', () => { setPlaying(false); status.textContent = 'Demo audio'; });
+    audio.addEventListener('error', () => {
+      player.classList.add('is-unavailable');
+      status.textContent = 'Thêm file demo audio';
+    });
+  }
+
+  setupEnhancedMotion() {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const hero = document.querySelector('.hero');
+    const revealTargets = document.querySelectorAll('.intro-story, .band-intro-card, .members-section, .gallery-section');
+
+    const canAnimate = window.gsap && !reducedMotion.matches;
+    const hasScrollTrigger = canAnimate && window.ScrollTrigger;
+
+    if (canAnimate) {
+      if (hasScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+      const mm = gsap.matchMedia();
+      mm.add({ desktop: '(min-width: 901px)', reduceMotion: '(prefers-reduced-motion: reduce)' }, (context) => {
+        const { desktop, reduceMotion } = context.conditions;
+        if (reduceMotion) return;
+
+        const intro = gsap.timeline({ defaults: { ease: 'power3.out' } });
+        intro
+          .from('.hero-copy > *', { y: 24, autoAlpha: 0, duration: .7, stagger: .08 }, 0)
+          .from('.hero-image-wrap', { y: 28, scale: .97, autoAlpha: 0, duration: 1 }, .16)
+          .from('.hero-badge, .hero-caption, .music-player', { y: 12, autoAlpha: 0, duration: .5, stagger: .08 }, .48);
+
+        if (desktop) {
+          gsap.to('.hero-image', { yPercent: -2.5, duration: 3.6, repeat: -1, yoyo: true, ease: 'sine.inOut' });
+        }
+      });
+      const textRevealTargets = document.querySelectorAll(
+        '.intro-story .story-heading, .intro-story .story-copy p, .band-intro-modern .band-intro-lead, .band-intro-modern article, .band-intro-contact, .section-heading-row, .member-card, .member-detail, .gallery-link-container'
+      );
+
+      if (hasScrollTrigger) {
+        gsap.set(textRevealTargets, { y: 32, autoAlpha: 0 });
+        ScrollTrigger.batch(textRevealTargets, {
+          start: 'top 86%',
+          once: false,
+          onEnter: (elements) => gsap.to(elements, {
+            y: 0,
+            autoAlpha: 1,
+            duration: .72,
+            stagger: .08,
+            ease: 'power3.out',
+            overwrite: 'auto'
+          }),
+          onLeaveBack: (elements) => gsap.to(elements, {
+            y: 24,
+            autoAlpha: 0,
+            duration: .32,
+            ease: 'power2.out',
+            overwrite: 'auto'
+          })
+        });
+        ScrollTrigger.refresh();
+      } else {
+        gsap.set(revealTargets, { y: 28, autoAlpha: 0 });
+      }
+    }
+
+    if (hasScrollTrigger) {
+      if (!hero || reducedMotion.matches) return;
+      hero.classList.add('motion-ready');
+      return;
+    }
+
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          if (canAnimate) {
+            gsap.to(entry.target, { y: 0, autoAlpha: 1, duration: .8, ease: 'power3.out' });
+          } else {
+            entry.target.classList.add('is-visible');
+          }
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.14 });
+      revealTargets.forEach((target) => revealObserver.observe(target));
+    } else {
+      revealTargets.forEach((target) => target.classList.add('is-visible'));
+    }
+
+    if (!hero || reducedMotion.matches) return;
+    hero.classList.add('motion-ready');
   }
 
   setupNavigation() {
